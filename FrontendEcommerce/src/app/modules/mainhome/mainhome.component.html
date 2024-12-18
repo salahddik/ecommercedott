@@ -1,0 +1,14 @@
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+  <div *ngFor="let product of products" class="flex justify-center items-center">
+    <div class="w-full max-w-xs bg-white rounded-lg shadow-lg overflow-hidden text-center p-4 hover:transform hover:translate-y-2 transition-all">
+      <img [src]="'http://localhost:1337' + product.Banner?.formats.small.url" alt="Product image" *ngIf="product.Banner" class="w-full h-auto rounded-lg object-cover" />
+      <h2 class="text-xl font-semibold text-gray-800 mt-4">{{ product.title }}</h2>
+      <p class="text-lg text-pink-500 mt-2">{{ product.price }} Dhs</p>
+
+      <!-- Add to Cart Button -->
+      <button class="mt-4 w-full py-2 px-4 bg-blue-500 text-white font-semibold rounded-lg hover:bg-blue-600 transition-all">
+        Add to Cart
+      </button>
+    </div>
+  </div>
+</div>
